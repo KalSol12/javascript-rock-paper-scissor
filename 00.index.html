@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>version 1</title>
+</head>
+<body>
+  <p>Rock paper scissors</p>
+  <button onclick="Do('rock')">Rock</button>
+  <button onclick="Do('paper')">paper</button>
+  <button onclick="Do('scissor')">scissors</button>
+  
+ 
+   
+</body>
+<script>
+ let randomNumber;
+ let computermove=" ";
+    function Do(yourMove) {
+      randomNumber=Math.random();
+       if (randomNumber>=0 && randomNumber<1/3) {
+        computermove="rock"
+        
+       }
+       else if (randomNumber>=1/3 && randomNumber<2/3) {
+        computermove="paper";;
+        
+       }
+       else if (randomNumber>=2/3&& randomNumber<1) 
+       {
+             computermove="scissor";
+            
+
+       }
+       result(computermove,yourMove)
+       console.log("computer move "+computermove)
+       console.log("your move "+yourMove)
+       
+    } 
+     
+
+      function result(computermove,yourMove) {
+        
+        if (computermove===yourMove) {
+          alert(`you pick ${yourMove} 
+                computer move ${computermove}
+                tie`);
+          } 
+          // for rock
+        else if(computermove==='paper' && yourMove==="rock"){
+        alert( `  you pick ${yourMove} 
+          computer move ${computermove}
+        you loss`);}
+        else if(computermove==="scissor" && yourMove==="rock"){
+          alert(` you pick ${yourMove}
+          computer move ${computermove}
+          
+          you won`);
+        }
+        
+        // for paper
+        else if(computermove==='rock' && yourMove==="paper"){
+        alert(`you pick ${yourMove}
+        computer move ${computermove}
+        you won`);}
+        else if(computermove==="scissor" && yourMove==='paper'){
+          alert(` you pick ${yourMove}
+          computer move ${computermove}
+          you loss`);
+        }
+        //for scissor
+        else if (computermove==="rock"&&yourMove==="scissor"){
+          alert(` you pick ${yourMove}
+          computer move ${computermove}
+          you loss`)
+        }
+        else if (yourMove==="scissor"&&computermove==="paper"){
+          alert(`you pick ${yourMove}
+           computer move ${computermove}
+           you win`)
+        }
+
+      
+
+
+        
+      }
+
+  </script>
+</html>
